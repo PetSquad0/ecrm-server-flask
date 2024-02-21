@@ -1,12 +1,13 @@
 from flask import Flask
-
 from config import secret_key, jwt_secret_key
-from routes import blueprint, jwt
-from models import db
+from controllers.user_controller import blueprint, jwt
+from controllers.auth_controller import auth_blueprint
+from models.user_model import db
 
 app = Flask(__name__)
 
 app.register_blueprint(blueprint)
+app.register_blueprint(auth_blueprint)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
 app.config['SECRET_KEY'] = secret_key

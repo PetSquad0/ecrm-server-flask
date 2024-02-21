@@ -1,4 +1,5 @@
 /instance/
-/templates/
-/static/
-/config.py
+/src/templates/
+/src/static/
+/src/config.py
+/pycache
